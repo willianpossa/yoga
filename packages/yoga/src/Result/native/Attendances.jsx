@@ -7,7 +7,6 @@ import Rate from './Rate';
 
 const List = styled(Text.Regular)`
   max-width: 220px;
-  text-align-vertical: center;
 `;
 
 const ItemSeparator = styled.View`
@@ -27,13 +26,23 @@ const ItemSeparator = styled.View`
 `;
 
 const IconWrapper = styled.View`
-  height: 16px;
-  width: 16px;
+  ${({
+    theme: {
+      yoga: {
+        spacing: { small },
+      },
+    },
+  }) => {
+    return `
+      width: ${small};
+      height: ${small};
+    `;
+  }}
 `;
 
 const Attendances = ({ attendances, rate }) => (
   <>
-    <List numberOfLines={1} size="xsmall">
+    <List numberOfLines={1} size="xsmall" textAlignVertical="bottom">
       {attendances &&
         attendances.map(({ description, icon }) => (
           <>
@@ -41,9 +50,9 @@ const Attendances = ({ attendances, rate }) => (
               <Icon
                 as={icon}
                 fill="medium"
-                width="16px"
-                height="16px"
-                style={{ marginTop: 2 }}
+                width="100%"
+                height="100%"
+                style={{ marginTop: 3 }}
               />
             </IconWrapper>
             <ItemSeparator />
