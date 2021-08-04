@@ -27,6 +27,53 @@ const attendanceList2 = [
   },
 ];
 
+const activitiesList = [
+  {
+    children: 'Activities 01',
+    variant: 'deep',
+  },
+  {
+    children: '02',
+    variant: 'deep',
+  },
+  {
+    children: '03',
+    variant: 'deep',
+  },
+  {
+    children: '04',
+    variant: 'deep',
+  },
+  {
+    children: '05',
+    variant: 'deep',
+  },
+  {
+    children: '06',
+    variant: 'deep',
+  },
+  {
+    children: '07',
+    variant: 'deep',
+  },
+];
+
+const entranceList = [
+  {
+    children: 'Entrance01',
+    icon: PinFilled,
+    variant: 'stamina',
+  },
+  {
+    children: 'Entrance02',
+    variant: 'stamina',
+  },
+  {
+    children: 'Entrance03',
+    variant: 'stamina',
+  },
+];
+
 const ScrollView = styled.ScrollView`
   padding: 10px;
   margin-bottom: 50px;
@@ -58,6 +105,13 @@ const ResultPage = () => (
         subTitle="Activity"
         divided
       >
+        <Result.Details items={entranceList} dots renderItem={Text.Small} />
+        <Result.Details
+          items={activitiesList}
+          dots
+          limit={3}
+          renderItem={Text.Small}
+        />
         <Result.Button>Link Button</Result.Button>
       </Result>
     </ResultWrapper>
@@ -70,6 +124,13 @@ const ResultPage = () => (
         title="Partner Name"
         divided
       >
+        <Result.Details items={entranceList} dots renderItem={Text.Small} />
+        <Result.Details
+          items={activitiesList}
+          dots
+          limit={3}
+          renderItem={Text.Small}
+        />
         <Result.Button>Upgrade</Result.Button>
       </Result>
     </ResultWrapper>
