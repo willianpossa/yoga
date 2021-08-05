@@ -6,11 +6,10 @@ import Text from '../../Text';
 import Rate from './Rate';
 
 const List = styled(Text.Regular)`
-  max-width: 220px;
+  max-width: 288px;
 `;
 
 const ItemSeparator = styled.View`
-  background-color: #7bff66;
   ${({
     theme: {
       yoga: {
