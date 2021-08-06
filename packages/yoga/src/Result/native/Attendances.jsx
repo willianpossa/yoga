@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { arrayOf, func, shape, string } from 'prop-types';
+import Box from '../../Box';
 import Icon from '../../Icon';
 import Text from '../../Text';
 import Rate from './Rate';
 
 const List = styled(Text.Regular)`
-  max-width: 288px;
+  flex: 1;
 `;
 
 const ItemSeparator = styled.View`
@@ -40,7 +41,13 @@ const IconWrapper = styled.View`
 `;
 
 const Attendances = ({ attendances, rate }) => (
-  <>
+  <Box
+    display="flex"
+    width="100%"
+    alignItems="center"
+    justifyContent="center"
+    flexDirection="row"
+  >
     <List numberOfLines={1} size="xsmall" textAlignVertical="bottom">
       {attendances &&
         attendances.map(({ description, icon }) => (
@@ -61,7 +68,7 @@ const Attendances = ({ attendances, rate }) => (
         ))}
     </List>
     {rate && <Rate rate={rate} />}
-  </>
+  </Box>
 );
 
 Attendances.propTypes = {
